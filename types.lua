@@ -1,0 +1,20 @@
+---@class NuiTheme
+---@field background string
+---@field foreground string
+---@field card string
+---@field cardForeground string
+---@field popover string
+---@field popoverForeground string
+---@field primary string
+---@field primaryForeground string
+---@field secondary string
+---@field secondaryForeground string
+---@field muted string
+---@field mutedForeground string
+---@field accent string
+---@field accentForeground string
+---@field destructive string
+---@field destructiveForeground string
+---@field border string
+---@field input string
+---@field ring string
