@@ -1,15 +1,24 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "~/components/ui/button";
 import { useKeyListener } from "~/hooks/useKeyListener";
+import { useNuiEvent } from "~/hooks/useNuiEvent";
 import { useCounterNuiStore, useVisibilityNuiStore } from "~/hooks/useNuiStore";
 import { fetchNui } from "~/utils/fetchNui";
 
 export function Component() {
   const { value: visible } = useVisibilityNuiStore();
   const { value: counter, setValue: setCounter } = useCounterNuiStore();
+  const navigate = useNavigate();
 
   useKeyListener(["Escape", "Backspace"], () => {
     fetchNui("setVisible", !visible);
   });
+
+  useNuiEvent("setPath", (path) => {
+    navigate({
+      pathname: path as unknown as string
+    });
+  })
 
   return (
     <>
