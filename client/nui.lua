@@ -56,6 +56,11 @@ function nui.registerTheme(name, theme)
   })
 end
 
+---@param path string
+function nui.setPath(path)
+  nui.sendAction("setPath", path)
+end
+
 ---@param name string
 function nui.setTheme(name)
   nui.sendAction("setTheme", name)
